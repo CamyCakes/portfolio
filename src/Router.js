@@ -1,57 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
+
+import SiteHeader from './SiteHeader'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import ProjectList from "./ProjectList";
+import { personalProjectList, professionalProjectList } from "./ProjectList";
 
-import { professionalProjects, personalProjects } from "./projectsData";
-
-export default function Routes() {
-	let [isHome, setIsHome] = useState(true);
-	return (
-		<Router>
-			<header className={(isHome ? "" : "show") + " app-header"}>
-				<Link
-					to="/"
-					onClick={() => {
-						setIsHome(true);
-					}}>
-					<img src={process.env.PUBLIC_URL + "/face.png"} />
-				</Link>
-				<nav>
-					<Link
-						to="/pro"
-						onClick={() => {
-							setIsHome(false);
-						}}>
-						Professional Work
+export default class Routes extends React.Component {
+	render() {
+		return (
+			<Router>
+				<header className={"show" + " app-header"}>
+					<Link to="/">
+						<img className="face" src={process.env.PUBLIC_URL + "/face.png"} />
 					</Link>
-					<Link
-						to="/projects"
-						onClick={() => {
-							setIsHome(false);
-						}}>
-						Personal Projects
-					</Link>
-					<a rel="noopener noreferrer" target="_blank" href={process.env.PUBLIC_URL + "/2019-09-resume.pdf"}>
-						Resume
-					</a>
-				</nav>
-			</header>
-			<div className={(isHome ? "" : "show") + " page-content-wrap"}>
-				<div className="page-content">
-					<Route path="/" exact component={this} />
-					<Route path="/projects" component={Projects} />
-					<Route path="/pro" component={ProfessionalProjects} />
+					<SiteHeader />
+					<nav>
+						<Link to="/pro">Professional Work</Link>
+						<Link to="/personal"> Personal Projects </Link>
+						<a rel="noopener noreferrer" target="_blank" href={process.env.PUBLIC_URL + "/cameron_cozza_resume.pdf"}>
+							Resume
+						</a>
+					</nav>
+				</header>
+				<div className={"show" + " page-content-wrap"}>
+					<div className="page-content">
+						<Route path="/" exact />
+						<Route path="/pro" component={ professionalProjectList } />
+						<Route path="/personal" component={ personalProjectList } />
+					</div>
 				</div>
-			</div>
-		</Router>
-	);
-}
-
-function Projects() {
-	console.log(personalProjects);
-	return <ProjectList list={personalProjects} header="Personal Projects" />;
-}
-
-function ProfessionalProjects() {
-	return <ProjectList list={professionalProjects} header="Professional Projects" />;
+			</Router>
+		);
+	}
 }
