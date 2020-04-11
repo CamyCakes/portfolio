@@ -1,34 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 
-import SiteHeader from './SiteHeader'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { personalProjectList, professionalProjectList } from "./ProjectList";
+import { personalProjectList, professionalProjectList } from "./ProjectList/ProjectList";
 
-export default class Routes extends React.Component {
-	render() {
-		return (
-			<Router>
-				<header className={"show" + " app-header"}>
-					<Link to="/">
-						<img className="face" src={process.env.PUBLIC_URL + "/face.png"} />
-					</Link>
-					<SiteHeader />
-					<nav>
-						<Link to="/pro">Professional Work</Link>
-						<Link to="/personal"> Personal Projects </Link>
-						<a rel="noopener noreferrer" target="_blank" href={process.env.PUBLIC_URL + "/cameron_cozza_resume.pdf"}>
-							Resume
-						</a>
-					</nav>
-				</header>
-				<div className={"show" + " page-content-wrap"}>
-					<div className="page-content">
-						<Route path="/" exact />
-						<Route path="/pro" component={ professionalProjectList } />
-						<Route path="/personal" component={ personalProjectList } />
-					</div>
+import PDFViewer from "./ProjectList/PDFViewer/PDFViewer";
+
+export const Routes = () => {
+	const [showContent, setShowContent] = useState(false);
+	const showContentClass = showContent ? " show" : "";
+
+	return (
+		<Router>
+			<header className={`app-header${showContentClass}`}>
+				<Link
+					to="/"
+					onClick={() => {
+						setShowContent(false);
+					}}>
+					<img alt="" className="face" src={process.env.PUBLIC_URL + "/face.png"} />
+				</Link>
+				<img alt="" className="name" src={process.env.PUBLIC_URL + "/name.svg"} />
+				<div>○ ○ ○</div>
+				<Navigation
+					onClick={() => {
+						setShowContent(true);
+					}}
+				/>
+			</header>
+			<div className={`page-content-wrap${showContentClass}`}>
+				<div className="page-content project-container">
+					<Route path="/" exact />
+					<Route path="/pro" component={professionalProjectList} />
+					<Route path="/personal" component={personalProjectList} />
+					<Route path="/resume" component={PDFViewer} />
 				</div>
-			</Router>
-		);
-	}
-}
+			</div>
+		</Router>
+	);
+};
+
+const Navigation = (props) => {
+	return (
+		<nav
+			onClick={() => {
+				props.onClick();
+			}}>
+			<Link to="/pro">Professional work</Link>
+			<Link to="/personal">Personal Projects</Link>
+			<Link to="/resume">resume</Link>
+		</nav>
+	);
+};

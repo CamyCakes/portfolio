@@ -1,0 +1,36 @@
+.pdf-cont {
+	display: flex;
+	justify-content: center;
+	& > a {
+		height: 70px;
+		opacity: 0.7;
+		& .download-icon {
+			height: 70px;
+			transition: opacity 0.25s;
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	& .pdf-viewer {
+		display: Flex;
+		justify-content: center;
+		width: 100%;
+
+		& > div:last-child {
+			display: block;
+			border: 1px solid #b1b1b1;
+			margin-top: 30px;
+			box-shadow: 0px 10px 13px #00000059;
+		}
+
+		& > div > div > div {
+			overflow: hidden !important;
+			height: auto !important;
+			& canvas {
+				width: 100% !important;
+			}
+		}
+	}
+}

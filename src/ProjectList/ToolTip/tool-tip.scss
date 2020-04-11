@@ -1,0 +1,51 @@
+.tool-tip-container {
+	position: relative;
+	height: 95%;
+
+	& .tool-tip {
+		background: #202020;
+		color: white;
+		padding: 15px 30px;
+		position: absolute;
+		opacity: 0;
+		transition: all 0.25s;
+		top: 0px;
+		border-radius: 50px;
+		left: 5%;
+		box-shadow: 0px 7px 7px 0px #00000073;
+		transform: rotate(5deg);
+		font-size: 16px;
+		transform-origin: 10% 90%;
+
+		& .tool-tip-link {
+			margin-top: 10px;
+			margin-bottom: 5px;
+			padding: 0px 10px;
+			cursor: pointer;
+			display: inline-block;
+			background: #77b81e;
+			border-radius: 10px;
+			transition: background 0.25s;
+			&:hover {
+				background: #5d8a1e;
+			}
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -15px;
+			left: 60px;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 15px 15px 0 15px;
+			border-color: #202020 transparent transparent transparent;
+		}
+		&.show {
+			transform: rotate(0deg);
+			top: -10px;
+			opacity: 1;
+		}
+	}
+}

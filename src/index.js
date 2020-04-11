@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Routes from "./Router";
+import { Routes } from "./Router";
 
 import "../node_modules/html5-boilerplate/dist/css/main.css";
 import "../node_modules/html5-boilerplate/dist/css/normalize.css";
