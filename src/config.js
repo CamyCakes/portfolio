@@ -111,7 +111,7 @@ export default {
 				details: [
 					{
 						text: "Shopify skinning and custom slideshows using Liquid for a local company in San Luis Obispo.",
-						link: "http://vannon.com/pages/custom-vans",
+						link: "https://vannon.com/pages/custom-vans",
 						image: "/images/vannon.png",
 					},
 				],
