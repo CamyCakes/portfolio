@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { personalProjectList, professionalProjectList } from "./ProjectList/ProjectList";
+import { ProjectLists } from "./ProjectList/ProjectList";
 
 import PDFViewer from "./ProjectList/PDFViewer/PDFViewer";
+
+import { Blob } from "./Blob/Blob";
 
 export const Routes = () => {
 	const [showContent, setShowContent] = useState(false);
@@ -12,42 +14,33 @@ export const Routes = () => {
 	return (
 		<Router>
 			<header className={`app-header${showContentClass}`}>
-				<Link
-					to="/"
-					onClick={() => {
-						setShowContent(false);
-					}}>
-					<img alt="" className="face" src={process.env.PUBLIC_URL + "/face.png"} />
-				</Link>
-				<img alt="" className="name" src={process.env.PUBLIC_URL + "/name.svg"} />
-				<div>○ ○ ○</div>
-				<Navigation
+				<Blob className="blob-header-2"></Blob>
+				<Blob className="blob-header-3"></Blob>
+				<Blob className="blob-header">
+					<img
+						onClick={() => {
+							setShowContent(false);
+						}}
+						alt=""
+						className="name"
+						src={process.env.PUBLIC_URL + "/name.svg"}
+					/>
+				</Blob>
+				<nav
 					onClick={() => {
 						setShowContent(true);
-					}}
-				/>
+					}}>
+					<Link to="/portfolio/projects">My Work</Link>
+					<Link to="/portfolio/resume">resume</Link>
+				</nav>
 			</header>
 			<div className={`page-content-wrap${showContentClass}`}>
 				<div className="page-content project-container">
-					<Route path="/" exact />
-					<Route path="/pro" component={professionalProjectList} />
-					<Route path="/personal" component={personalProjectList} />
-					<Route path="/resume" component={PDFViewer} />
+					<Route path="/portfolio/" exact />
+					<Route path="/portfolio/projects" component={ProjectLists} />
+					<Route path="/portfolio/resume" component={PDFViewer} />
 				</div>
 			</div>
 		</Router>
-	);
-};
-
-const Navigation = (props) => {
-	return (
-		<nav
-			onClick={() => {
-				props.onClick();
-			}}>
-			<Link to="/pro">Professional work</Link>
-			<Link to="/personal">Personal Projects</Link>
-			<Link to="/resume">resume</Link>
-		</nav>
 	);
 };

@@ -15,6 +15,18 @@ export default function ToolTip(props) {
 		</div>
 	);
 
+	const tags = props.tags && (
+		<div className="tags">
+			{props.tags.map((tag, index) => {
+				return (
+					<span style={{ background: tag.color }} key={index}>
+						{tag.tag}
+					</span>
+				);
+			})}
+		</div>
+	);
+
 	return (
 		<div
 			className="tool-tip-container"
@@ -25,6 +37,8 @@ export default function ToolTip(props) {
 				setShowToolTip(false);
 			}}>
 			<div className={`tool-tip ${showToolTip ? "show" : ""}`}>
+				{tags}
+				<div className="header">{props.header}</div>
 				{props.text}
 				{openLink}
 			</div>

@@ -1,0 +1,180 @@
+@function randomNum($min, $max) {
+	$rand: random();
+	$randomNum: $min + floor($rand * (($max - $min) + 1));
+	@return $randomNum;
+}
+
+$blobColor: #242424;
+$blobColor2: #ecd71f;
+$blobColor3: #901fec;
+
+.blob-header,
+.blob-header-2,
+.blob-header-3 {
+	margin: 30px;
+	filter: url(#blob);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	position: relative;
+
+	& + .hide {
+		display: none;
+	}
+
+	& .blob-content {
+		position: relative;
+		z-index: 1;
+	}
+
+	& > div {
+		position: absolute;
+		display: inline-block;
+		background: $blobColor;
+		box-shadow: 0px 0px 20px $blobColor;
+		border-radius: 500px;
+		$top-collection: 0;
+		$left-collection: 0;
+
+		@for $i from 1 to 30 {
+			$left: randomNum(-10px, 100px);
+			$top: randomNum(10px, 12px);
+			$randW: randomNum(100px, 300px);
+			$randH: randomNum(100px, 250px);
+
+			&:nth-child(#{$i}) {
+				width: $randW;
+				height: $randH;
+				left: $left;
+			}
+
+			$left-collection: append($left-collection, $left);
+			$top-collection: append($top-collection, $top);
+		}
+
+		@for $i from 1 to length($top-collection) {
+			&:nth-child(#{$i}) {
+				left: nth($left-collection, $i);
+				top: nth($top-collection, $i);
+
+				animation: anim-#{$i} 20s linear infinite;
+				animation-direction: normal;
+				transform-origin: randomNum(40%, 50%);
+
+				animation-delay: -#{$i/1}s;
+
+				@keyframes anim-#{$i} {
+					0% {
+						transform: rotate(0deg);
+						left: 0;
+						top: 0;
+					}
+					50% {
+						left: nth($left-collection, $i);
+						top: nth($top-collection, $i);
+					}
+					100% {
+						transform: rotate(-360deg);
+						left: 0;
+						top: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.blob-header-2 {
+	top: 80px;
+	z-index: 0;
+	& > div {
+		background: $blobColor2;
+		box-shadow: 0px 0px 20px $blobColor2;
+	}
+}
+
+.blob-header-3 {
+	top: 15px;
+	left: 5px;
+	z-index: 0;
+	& > div {
+		background: $blobColor3;
+		box-shadow: 0px 0px 20px $blobColor3;
+	}
+}
+
+.blob {
+	margin: 30px;
+	filter: url(#blob);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	position: relative;
+
+	& + .hide {
+		display: none;
+	}
+
+	& .blob-content {
+		position: relative;
+		z-index: 1;
+	}
+
+	& > div {
+		position: absolute;
+		display: inline-block;
+		background: $blobColor;
+		box-shadow: 0px 0px 20px $blobColor;
+		border-radius: 500px;
+		$top-collection: 0;
+		$left-collection: 0;
+
+		@for $i from 1 to 30 {
+			$left: randomNum(-10px, 100px);
+			$top: randomNum(10px, 12px);
+			$randW: randomNum(100px, 300px);
+			$randH: randomNum(100px, 250px);
+
+			&:nth-child(#{$i}) {
+				width: $randW;
+				height: $randH;
+				left: $left;
+			}
+
+			$left-collection: append($left-collection, $left);
+			$top-collection: append($top-collection, $top);
+		}
+
+		@for $i from 1 to length($top-collection) {
+			&:nth-child(#{$i}) {
+				left: nth($left-collection, $i);
+				top: nth($top-collection, $i);
+
+				animation: anim-#{$i} 20s linear infinite;
+				animation-direction: normal;
+				transform-origin: randomNum(40%, 50%);
+
+				animation-delay: -#{$i/1}s;
+
+				@keyframes anim-#{$i} {
+					0% {
+						transform: rotate(0deg);
+						left: 0;
+						top: 0;
+					}
+					50% {
+						left: nth($left-collection, $i);
+						top: nth($top-collection, $i);
+					}
+					100% {
+						transform: rotate(-360deg);
+						left: 0;
+						top: 0;
+					}
+				}
+			}
+		}
+	}
+}

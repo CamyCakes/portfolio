@@ -1,129 +1,187 @@
 export default {
 	projects: {
-		just_for_fun: [
-			{
-				title: "Music Player",
-				description: "Your basic, run-of-the mill music player.",
-				details: [
-					{
-						noModal: true,
-						link: "https://camycakes.github.io/react-music-player/",
-					},
-				],
-			},
-			{
-				title: "Date Picker",
-				description: "A nice and little datepicker component.",
-				details: [
-					{
-						noModal: true,
-						link: "https://camycakes.github.io/react-datepicker/",
-					},
-				],
-			},
-			{
-				title: "Digital Clock",
-				description: "A neat experiment using css animations.",
-				details: [
-					{
-						noModal: true,
-						link: "https://camycakes.github.io/React-Clock/",
-					},
-				],
-			},
-			{
-				title: "Obligtory Todo App",
-				description: "The quintessential todo app.",
-				details: [
-					{
-						noModal: true,
-						link: "https://camycakes.github.io/obligatory-todo-app-with-react/",
-					},
-				],
-			},
-		],
 		professional: [
 			{
 				title: "Gander Digital Products",
-				description: "Electronic educational materials for Gander Publishing",
-				details: [
+				description: "Online educational materials for Gander Publishing. Currently a work in progress.",
+				image: "/images/vv-workbooks.png",
+				tags: [
 					{
-						text: "Suite of applications delivered through an LMS for online students. WP REST Apis and React deliver a learning experience unique to Gander materials.",
-						image: "/images/vv-workbooks.png",
+						tag: "react",
+						color: "#9b1616",
+					},
+					{
+						tag: "webpack",
+						color: "#b8a715",
+					},
+					{
+						tag: "php",
+						color: "#1565b8",
 					},
 				],
 			},
 			{
 				title: "Lindamood-Bell Website",
-				description: "Marketing website with 1.2 million annual visitors.",
-				details: [
+				description: "Marketing website with 1.2 million annual visitors. My work is in many of its features.",
+				image: "/images/lblp-logo.png",
+				link: "https://lindamoodbell.com",
+				tags: [
 					{
-						text: "My work is all over this site: from site load speed optimizing, to carousels, to backend plugins.",
-						link: "https://lindamoodbell.com",
-						image: "/images/lblp-logo.png",
+						tag: "php",
+						color: "#1565b8",
 					},
 					{
-						text: "Email Builder - uses WP backend as a no-code solution for generating HTML emails.",
-						image: "/images/lblp-email.png",
-					},
-					{
-						text: "Webinar Scheduler - generates registration forms and gated content.",
-						image: "/images/lblp-webinar.png",
-						link: "https://lindamoodbell.com/webinar-post/leaders-in-literacy-4",
+						tag: "javascript",
+						color: "#4caf50",
 					},
 				],
 			},
 			{
 				title: "Lindamood-Bell Foundation",
 				description: "Non-profit organization to help families benefit from Lindamood-Bell Learning Processes.",
-				details: [
+				image: "/images/lbf.png",
+				link: "https://lindamoodbellfoundation.org/",
+				tags: [
 					{
-						text: "A simple and elegant brochure site using a custom theme from scratch",
-						image: "/images/lbf.png",
-						link: "https://lindamoodbellfoundation.org/",
+						tag: "php",
+						color: "#1565b8",
+					},
+					{
+						tag: "javascript",
+						color: "#4caf50",
 					},
 				],
 			},
 			{
 				title: "Gander Publishing Website",
-				description: "Online Storefront for Gander Publishing.",
-				details: [
+				description: "Online Storefront for Gander Publishing. Currently a work in progress.",
+				image: "/images/gander-logo.png",
+				tags: [
 					{
-						text: "A new Shopify storefront for Gander Publishing. A lot of skinning, app integration, and Liquid code. Still a work in progress!",
-						image: "/images/gander-logo.png",
+						tag: "liquid / shopify",
+						color: "#ff5722",
+					},
+					{
+						tag: "javascript",
+						color: "#4caf50",
 					},
 				],
 			},
 			{
 				title: "CIS Tool",
 				description: "Online storefront for Custom Innovated Solutions",
-				details: [
+				image: "/images/cistool.png",
+				link: "https://cistool.co",
+				tags: [
 					{
-						text: "A simple WooCommerce storefront for a past client.",
-						link: "https://cistool.co",
-						image: "/images/cistool.png",
+						tag: "php",
+						color: "#1565b8",
+					},
+					{
+						tag: "javascript",
+						color: "#4caf50",
 					},
 				],
 			},
 			{
 				title: "Vannon",
 				description: "Online store for Vannon",
-				details: [
+				image: "/images/vannon.png",
+				externalLink: "https://vannon.com/pages/custom-vans",
+				tags: [
 					{
-						text: "Shopify skinning and custom slideshows using Liquid for a local company in San Luis Obispo.",
-						link: "https://vannon.com/pages/custom-vans",
-						image: "/images/vannon.png",
+						tag: "liquid / shopify",
+						color: "#ff5722",
+					},
+					{
+						tag: "javascript",
+						color: "#4caf50",
 					},
 				],
 			},
 			{
 				title: "CSUMB Capstone Festival Website 2016",
 				description: "This unfortunatly did not age well, but was an invaluable learning experience early on.",
-				details: [
+				image: "/images/csumb.png",
+				link: "https://itcdland.csumb.edu/~ccozza/capstone/php/home.php",
+				tags: [
 					{
-						text: "My capstone project in college. A full stack project complete with a janky, yet effective, cms I wrote! It's not too bad considering I did not know what I was getting into...",
-						link: "http://itcdland.csumb.edu/~ccozza/capstone/php/home.php",
-						image: "/images/csumb.png",
+						tag: "php",
+						color: "#1565b8",
+					},
+					{
+						tag: "javascript",
+						color: "#4caf50",
+					},
+					{
+						tag: "mySql",
+						color: "black",
+					},
+				],
+			},
+		],
+		personal: [
+			{
+				title: "Music Player",
+				description: "A basic, run-of-the mill, music player.",
+				link: "https://camycakes.github.io/react-music-player/",
+				image: "/images/music-player.png",
+				noModal: true,
+				tags: [
+					{
+						tag: "react",
+						color: "#9b1616",
+					},
+					{
+						tag: "html5 audio",
+						color: "#cd651b",
+					},
+				],
+			},
+			{
+				title: "Date Picker",
+				description: "A simple little datepicker.",
+				link: "https://camycakes.github.io/react-datepicker/",
+				image: "/images/date-picker.png",
+				noModal: true,
+				tags: [
+					{
+						tag: "react",
+						color: "#9b1616",
+					},
+					{
+						tag: "js Date()",
+						color: "black",
+					},
+				],
+			},
+			{
+				title: "Digital Clock",
+				description: "Some neat experiments with css animations.",
+				link: "https://camycakes.github.io/React-Clock/",
+				image: "/images/react-clock.png",
+				noModal: true,
+				tags: [
+					{
+						tag: "react",
+						color: "#9b1616",
+					},
+					{
+						tag: "CSS animations",
+						color: "#cd651b",
+					},
+				],
+			},
+			{
+				title: "Obligtory Todo App",
+				description: "The quintessential todo app.",
+				noModal: true,
+				image: "/images/todo-app.png",
+				link: "https://camycakes.github.io/obligatory-todo-app-with-react/",
+				tags: [
+					{
+						tag: "react",
+						color: "#9b1616",
 					},
 				],
 			},
