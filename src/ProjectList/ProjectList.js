@@ -36,6 +36,8 @@ const Project = (props) => {
 
 	const index = props.index;
 	const item = props.item;
+	const imageSrc = props.item.image;
+	console.log(imageSrc);
 
 	return (
 		<div className="project-section">
@@ -53,7 +55,7 @@ const Project = (props) => {
 						if (item.link) setShowModal(index);
 					}}
 					className="project-image"
-					src={props.item.image}
+					src={imageSrc}
 				/>
 
 				{showModal === index && item.link && (

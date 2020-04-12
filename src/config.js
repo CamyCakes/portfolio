@@ -4,7 +4,7 @@ export default {
 			{
 				title: "Gander Digital Products",
 				description: "Online educational materials for Gander Publishing. Currently a work in progress.",
-				image: "/images/vv-workbooks.png",
+				image: "/vv-workbooks.png",
 				tags: [
 					{
 						tag: "react",
@@ -23,7 +23,7 @@ export default {
 			{
 				title: "Lindamood-Bell Website",
 				description: "Marketing website with 1.2 million annual visitors. My work is in many of its features.",
-				image: "/images/lblp-logo.png",
+				image: "/lblp-logo.png",
 				link: "https://lindamoodbell.com",
 				tags: [
 					{
@@ -39,7 +39,7 @@ export default {
 			{
 				title: "Lindamood-Bell Foundation",
 				description: "Non-profit organization to help families benefit from Lindamood-Bell Learning Processes.",
-				image: "/images/lbf.png",
+				image: "/lbf.png",
 				link: "https://lindamoodbellfoundation.org/",
 				tags: [
 					{
@@ -55,7 +55,7 @@ export default {
 			{
 				title: "Gander Publishing Website",
 				description: "Online Storefront for Gander Publishing. Currently a work in progress.",
-				image: "/images/gander-logo.png",
+				image: "/gander-logo.png",
 				tags: [
 					{
 						tag: "liquid / shopify",
@@ -70,7 +70,7 @@ export default {
 			{
 				title: "CIS Tool",
 				description: "Online storefront for Custom Innovated Solutions",
-				image: "/images/cistool.png",
+				image: "/cistool.png",
 				link: "https://cistool.co",
 				tags: [
 					{
@@ -86,7 +86,7 @@ export default {
 			{
 				title: "Vannon",
 				description: "Online store for Vannon",
-				image: "/images/vannon.png",
+				image: "/vannon.png",
 				externalLink: "https://vannon.com/pages/custom-vans",
 				tags: [
 					{
@@ -102,7 +102,7 @@ export default {
 			{
 				title: "CSUMB Capstone Festival Website 2016",
 				description: "This unfortunatly did not age well, but was an invaluable learning experience early on.",
-				image: "/images/csumb.png",
+				image: "/csumb.png",
 				link: "https://itcdland.csumb.edu/~ccozza/capstone/php/home.php",
 				tags: [
 					{
@@ -125,7 +125,7 @@ export default {
 				title: "Music Player",
 				description: "A basic, run-of-the mill, music player.",
 				link: "https://camycakes.github.io/react-music-player/",
-				image: "/images/music-player.png",
+				image: "/music-player.png",
 				noModal: true,
 				tags: [
 					{
@@ -142,7 +142,7 @@ export default {
 				title: "Date Picker",
 				description: "A simple little datepicker.",
 				link: "https://camycakes.github.io/react-datepicker/",
-				image: "/images/date-picker.png",
+				image: "/date-picker.png",
 				noModal: true,
 				tags: [
 					{
@@ -159,7 +159,7 @@ export default {
 				title: "Digital Clock",
 				description: "Some neat experiments with css animations.",
 				link: "https://camycakes.github.io/React-Clock/",
-				image: "/images/react-clock.png",
+				image: "/react-clock.png",
 				noModal: true,
 				tags: [
 					{
@@ -176,7 +176,7 @@ export default {
 				title: "Obligtory Todo App",
 				description: "The quintessential todo app.",
 				noModal: true,
-				image: "/images/todo-app.png",
+				image: "/todo-app.png",
 				link: "https://camycakes.github.io/obligatory-todo-app-with-react/",
 				tags: [
 					{
