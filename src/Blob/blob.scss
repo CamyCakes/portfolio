@@ -5,19 +5,12 @@
 }
 
 $blobColor: #242424;
-$blobColor2: #ecd71f;
-$blobColor3: #901fec;
 
-.blob-header,
-.blob-header-2,
-.blob-header-3 {
-	margin: 30px;
+.blob-header {
 	filter: url(#blob);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	z-index: 1;
-	position: relative;
 
 	& + .hide {
 		display: none;
@@ -26,6 +19,8 @@ $blobColor3: #901fec;
 	& .blob-content {
 		position: relative;
 		z-index: 1;
+		top: 39px;
+		padding: 7px;
 	}
 
 	& > div {
@@ -38,9 +33,9 @@ $blobColor3: #901fec;
 		$left-collection: 0;
 
 		@for $i from 1 to 30 {
-			$left: randomNum(-10px, 100px);
-			$top: randomNum(10px, 12px);
-			$randW: randomNum(100px, 300px);
+			$left: randomNum(-150px, 50px);
+			$top: randomNum(-250px, 100px);
+			$randW: randomNum(150px, 180px);
 			$randH: randomNum(100px, 250px);
 
 			&:nth-child(#{$i}) {
@@ -58,9 +53,9 @@ $blobColor3: #901fec;
 				left: nth($left-collection, $i);
 				top: nth($top-collection, $i);
 
-				animation: anim-#{$i} 20s linear infinite;
+				animation: anim-#{$i} 8s linear infinite;
 				animation-direction: normal;
-				transform-origin: randomNum(40%, 50%);
+				transform-origin: center center;
 
 				animation-delay: -#{$i/1}s;
 
@@ -82,25 +77,6 @@ $blobColor3: #901fec;
 				}
 			}
 		}
-	}
-}
-
-.blob-header-2 {
-	top: 80px;
-	z-index: 0;
-	& > div {
-		background: $blobColor2;
-		box-shadow: 0px 0px 20px $blobColor2;
-	}
-}
-
-.blob-header-3 {
-	top: 15px;
-	left: 5px;
-	z-index: 0;
-	& > div {
-		background: $blobColor3;
-		box-shadow: 0px 0px 20px $blobColor3;
 	}
 }
 

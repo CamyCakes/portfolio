@@ -10,7 +10,7 @@ export const ProjectLists = () => {
 	return (
 		<>
 			<ProjectList list="professional" header="Professional Work" />
-			<ProjectList list="personal" header="Personal Projects" subheader={"Just some fun projects when I was learning React."} />
+			<ProjectList list="personal" header="Personal Projects" subheader={"Fun and learning"} />
 		</>
 	);
 };
@@ -36,8 +36,7 @@ const Project = (props) => {
 
 	const index = props.index;
 	const item = props.item;
-	const imageSrc = props.item.image;
-	console.log(imageSrc);
+	const imageSrc = process.env.PUBLIC_URL + props.item.image;
 
 	return (
 		<div className="project-section">

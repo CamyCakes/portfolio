@@ -39,7 +39,7 @@ export default function ToolTip(props) {
 			<div className={`tool-tip ${showToolTip ? "show" : ""}`}>
 				{tags}
 				<div className="header">{props.header}</div>
-				{props.text}
+				<div className="text"> {props.text} </div>
 				{openLink}
 			</div>
 			{props.children}

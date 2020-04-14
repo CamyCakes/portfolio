@@ -38,7 +38,7 @@ export default {
 			},
 			{
 				title: "Lindamood-Bell Foundation",
-				description: "Non-profit organization to help families benefit from Lindamood-Bell Learning Processes.",
+				description: "Custom wordpress theme for non-profit organization to help families benefit from Lindamood-Bell Learning Processes.",
 				image: "/lbf.png",
 				link: "https://lindamoodbellfoundation.org/",
 				tags: [
@@ -69,7 +69,7 @@ export default {
 			},
 			{
 				title: "CIS Tool",
-				description: "Online storefront for Custom Innovated Solutions",
+				description: "Full WooCommerce setup and customization for Custom Innovated Solutions.",
 				image: "/cistool.png",
 				link: "https://cistool.co",
 				tags: [
@@ -85,7 +85,7 @@ export default {
 			},
 			{
 				title: "Vannon",
-				description: "Online store for Vannon",
+				description: "Online showcase of vans. Replaced a really crappy slide show app with a clean grid of vans.",
 				image: "/vannon.png",
 				externalLink: "https://vannon.com/pages/custom-vans",
 				tags: [
@@ -101,7 +101,7 @@ export default {
 			},
 			{
 				title: "CSUMB Capstone Festival Website 2016",
-				description: "This unfortunatly did not age well, but was an invaluable learning experience early on.",
+				description: "My capstone project at CSUMB. This unfortunatly did not age well, but was an invaluable learning experience early on.",
 				image: "/csumb.png",
 				link: "https://itcdland.csumb.edu/~ccozza/capstone/php/home.php",
 				tags: [
@@ -122,11 +122,25 @@ export default {
 		],
 		personal: [
 			{
+				title: "This Site",
+				description: "I needed to update my site, so I decided to have some fun with CSS and React. Like totally blobular bro (on safari and chrome...)",
+				image: "/blob-site.png",
+				tags: [
+					{
+						tag: "react",
+						color: "#9b1616",
+					},
+					{
+						tag: "CSS",
+						color: "#cd651b",
+					},
+				],
+			},
+			{
 				title: "Music Player",
 				description: "A basic, run-of-the mill, music player.",
 				link: "https://camycakes.github.io/react-music-player/",
 				image: "/music-player.png",
-				noModal: true,
 				tags: [
 					{
 						tag: "react",
@@ -143,7 +157,6 @@ export default {
 				description: "A simple little datepicker.",
 				link: "https://camycakes.github.io/react-datepicker/",
 				image: "/date-picker.png",
-				noModal: true,
 				tags: [
 					{
 						tag: "react",
@@ -160,7 +173,6 @@ export default {
 				description: "Some neat experiments with css animations.",
 				link: "https://camycakes.github.io/React-Clock/",
 				image: "/react-clock.png",
-				noModal: true,
 				tags: [
 					{
 						tag: "react",
@@ -175,7 +187,6 @@ export default {
 			{
 				title: "Obligtory Todo App",
 				description: "The quintessential todo app.",
-				noModal: true,
 				image: "/todo-app.png",
 				link: "https://camycakes.github.io/obligatory-todo-app-with-react/",
 				tags: [

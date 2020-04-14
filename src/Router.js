@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { ProjectLists } from "./ProjectList/ProjectList";
-
+import { BrowserRouter as Router, Route, Link, useLocation } from "react-router-dom";
 import PDFViewer from "./ProjectList/PDFViewer/PDFViewer";
 
+import { ProjectLists } from "./ProjectList/ProjectList";
 import { Blob } from "./Blob/Blob";
 
 export const Routes = () => {
 	const [showContent, setShowContent] = useState(false);
 	const showContentClass = showContent ? " show" : "";
-
 	return (
 		<Router>
 			<header className={`app-header${showContentClass}`}>
-				<Blob className="blob-header-2"></Blob>
-				<Blob className="blob-header-3"></Blob>
 				<Blob className="blob-header">
 					<img
 						onClick={() => {
