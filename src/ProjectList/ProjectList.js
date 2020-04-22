@@ -1,17 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+import { Transition } from "react-transition-group";
 
 import configs from "../config";
 import Modal from "../Modal/Modal";
-import ToolTip from "./ToolTip/ToolTip";
+import ToolTip from "../ToolTip/ToolTip";
 
 import "./project-list.scss";
 
-export const ProjectLists = () => {
+export const ProjectLists = (props) => {
+	const [inProp, setInProp] = useState(false);
+	const showContent = props.showContent;
+
+	useEffect(() => {
+		if (showContent) setInProp(true);
+		else setInProp(false);
+	});
+	const duration = 1000;
+
+	const defaultStyle = {
+		transition: `opacity ${duration}ms cubic-bezier(1, 0, 0, 1)`,
+		pointerEvents: "none",
+		opacity: 0,
+	};
+
+	const transitionStyles = {
+		entering: { opacity: 1 },
+		entered: { opacity: 1, pointerEvents: "all" },
+		exiting: { opacity: 0 },
+		exited: { opacity: 0, pointerEvents: "none" },
+	};
+
 	return (
-		<>
-			<ProjectList list="professional" header="Professional Work" />
-			<ProjectList list="personal" header="Personal Projects" subheader={"Fun and learning"} />
-		</>
+		<Transition in={inProp} out={inProp} timeout={duration}>
+			{(state) => (
+				<div
+					style={{
+						...defaultStyle,
+						...transitionStyles[state],
+					}}>
+					<div className="projects-container">
+						<div className="back-arrow-cont">
+							<div onClick={() => props.hideMe()} className="back-arrow">
+								&larr;
+							</div>
+						</div>
+						<ProjectList list="professional" header="Professional Work" />
+						<ProjectList list="personal" header="Personal Projects" subheader={"Fun and learning"} />
+					</div>
+				</div>
+			)}
+		</Transition>
 	);
 };
 
@@ -20,19 +59,20 @@ const ProjectList = (props) => {
 
 	return (
 		<>
-			<h2 className="projects-header">{props.header}</h2>
-			{props.subheader ? <h3 className="projects-sub-header">{props.subheader}</h3> : null}
-			<nav>
+			<div className="project-sections">
+				<h2 className="projects-header">{props.header}</h2>
+				{props.subheader ? <h3 className="projects-sub-header">{props.subheader}</h3> : null}
 				{listData.map((item, index) => {
 					return <Project list={props.list} item={item} key={index} index={index} />;
 				})}
-			</nav>
+			</div>
 		</>
 	);
 };
 
 const Project = (props) => {
 	const [showModal, setShowModal] = useState(false);
+	const [closeToolTip, setCloseToolTip] = useState(false);
 
 	const index = props.index;
 	const item = props.item;
@@ -45,9 +85,11 @@ const Project = (props) => {
 				header={item.title}
 				tags={item.tags}
 				link={item.link || item.externalLink}
+				closeToolTip={closeToolTip}
 				onClick={() => {
 					if (item.link) setShowModal(index);
 					else if (item.externalLink) window.open(item.externalLink, "_blank");
+					setCloseToolTip(!closeToolTip);
 				}}>
 				<img
 					onClick={() => {

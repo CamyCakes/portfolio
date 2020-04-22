@@ -1,34 +1,79 @@
-.project-container {
-	& .project-section {
+.projects-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	position: absolute;
+	top: 0;
+	padding-top: 10%;
+	overflow-y: scroll;
+	height: 100vh;
+
+	& > .back-arrow-cont {
+		display: flex;
+		justify-content: left;
+		width: 100%;
+		max-width: 1200px;
+
+		& .back-arrow {
+			color: white;
+			font-size: 42px;
+			cursor: pointer;
+			transition: all 0.25s ease-in-out;
+			position: relative;
+			right: 10px;
+			&:hover {
+				right: 20px;
+			}
+		}
+	}
+
+	& .project-sections {
 		display: flex;
 		margin-right: 20px;
 		margin-bottom: 20px;
+		width: 100%;
+		max-width: 1200px;
+		padding: 20px;
+		position: relative;
+		flex-wrap: wrap;
+		z-index: 1;
 
-		&:hover img {
-			filter: blur(4px);
+		&:nth-child(3) {
+			padding-bottom: 500px;
 		}
 
-		& .project-image {
-			height: 150px;
-			box-shadow: 0px 5px 10px #00000021;
-			border-radius: 15px;
-			transition: all 0.25s;
-			position: relative;
-			top: 0;
-			cursor: pointer;
+		& .projects-header {
+			font-size: 36px;
+			color: white;
+			margin: 30px 0px;
+			font-weight: 800;
+			width: 100%;
 		}
-	}
 
-	& .projects-header {
-		font-size: 36px;
-		color: #242424;
-		margin: 30px 0px;
-		font-weight: 800;
-	}
+		& .projects-sub-header {
+			color: white;
+			font-size: 20px;
+			margin-top: -20px;
+			margin-bottom: 30px;
+			width: 100%;
+		}
 
-	& .projects-sub-header {
-		font-size: 20px;
-		margin-top: -20px;
-		margin-bottom: 30px;
+		& .project-section {
+			margin: 5px;
+
+			&:hover img {
+				filter: blur(4px);
+			}
+
+			& .project-image {
+				height: 150px;
+				box-shadow: 0px 5px 10px #00000021;
+				border-radius: 15px;
+				transition: all 0.25s;
+				position: relative;
+				top: 0;
+				cursor: pointer;
+			}
+		}
 	}
 }

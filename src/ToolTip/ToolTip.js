@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./tool-tip.scss";
 
 export default function ToolTip(props) {
 	const [showToolTip, setShowToolTip] = useState(false);
+
+	useEffect(() => {
+		setShowToolTip(false);
+	}, [props.closeToolTip]);
 
 	const openLink = props.link && (
 		<div>

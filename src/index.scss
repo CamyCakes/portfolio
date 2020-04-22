@@ -2,9 +2,8 @@
 html {
 	overflow: hidden;
 }
+
 .App {
-	display: flex;
-	justify-content: space-between;
 	height: 100vh;
 	font-family: "Roboto", sans-serif;
 	font-weight: 400;
@@ -12,87 +11,51 @@ html {
 	background: radial-gradient(circle at top left, rgb(179, 255, 0), rgb(4, 123, 170));
 	overflow: hidden;
 
-	& .face {
-		border-radius: 50%;
-		transform: rotate(-8deg);
-	}
-
-	& nav {
-		display: flex;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-		text-align: center;
-		position: relative;
-
-		& a {
-			width: 100%;
-			padding: 5px;
-			font-size: 18px;
-			text-decoration: none;
-			color: black;
-		}
-	}
 	& .app-header {
-		& .name {
-			margin: 15px 0px 100px 0px;
-			height: 100%;
-			width: 250px;
-		}
-		& nav {
-			top: 30px;
-		}
-
-		& a {
-			font-weight: 400;
-			transition: all 0.25s;
-			border-radius: 5px;
-			text-transform: uppercase;
-			margin: 5px;
-			&:hover {
-				background: #2424241c;
-			}
-		}
-	}
-
-	& header {
-		margin: 0 10% 0 20%;
-		padding: 10px;
-		width: 250px;
-		min-width: 250px;
-		text-align: center;
+		margin: 5% auto;
 		transition: all 0.25s;
-		padding-top: 10%;
-
-		& h1 {
-			color: #252525;
-		}
-
-		&.show {
-			margin: 0 4%;
-		}
-	}
-
-	& .page-content-wrap {
+		width: 100%;
 		display: flex;
-		color: black;
-		width: 0%;
-		transition: width 0.5s;
+		justify-content: center;
+		flex-wrap: wrap;
 
-		&.show {
-			width: 100%;
+		& .name {
+			width: 14vw;
+			position: absolute;
 		}
 
-		& .page-content {
-			background: white;
-			height: auto;
-			width: auto;
-			padding: 15px 45px;
-			padding-top: 2% !important;
-			box-shadow: -5px -5px 20px #00000059;
-			border: 0px solid black;
-			overflow: auto;
-			overflow-x: hidden;
-			flex-grow: 1;
+		& .main-nav {
+			top: 165px;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			text-align: center;
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			opacity: 1;
+			transition: all 1s cubic-bezier(1, 0, 0, 1);
+
+			&.hide {
+				pointer-events: none;
+				opacity: 0;
+			}
+
+			& a {
+				padding: 5px 10px;
+				font-size: 18px;
+				text-decoration: none;
+				cursor: pointer;
+				font-weight: 400;
+				transition: all 0.25s;
+				text-transform: uppercase;
+				color: white;
+				border-radius: 10px;
+
+				&:hover {
+					background: rgba(0, 0, 0, 0.089);
+				}
+			}
 		}
 	}
 }

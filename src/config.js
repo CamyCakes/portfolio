@@ -3,7 +3,7 @@ export default {
 		professional: [
 			{
 				title: "Gander Digital Products",
-				description: "Online educational materials for Gander Publishing. Currently a work in progress.",
+				description: "A suite of online educational materials for Gander Publishing. Currently a work in progress.",
 				image: "/vv-workbooks.png",
 				tags: [
 					{
@@ -22,7 +22,7 @@ export default {
 			},
 			{
 				title: "Lindamood-Bell Website",
-				description: "Marketing website with 1.2 million annual visitors. My work is in many of its features.",
+				description: "Marketing website with 1.2 million annual visitors. My work is in many of its features. So many features on the front and back ends!",
 				image: "/lblp-logo.png",
 				link: "https://lindamoodbell.com",
 				tags: [
