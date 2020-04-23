@@ -22,7 +22,7 @@ export default {
 			},
 			{
 				title: "Lindamood-Bell Website",
-				description: "Marketing website with 1.2 million annual visitors. My work is in many of its features. So many features on the front and back ends!",
+				description: "Marketing website with 1.2 million annual visitors. I've added a lot of features on the front and back ends.",
 				image: "/lblp-logo.png",
 				link: "https://lindamoodbell.com",
 				tags: [

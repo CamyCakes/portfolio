@@ -14,16 +14,6 @@ export const Blob = (props) => {
 				<div></div>
 				<div></div>
 				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
 				<span className="blob-content">{props.children}</span>
 				<svg className="hide" xmlns="http://www.w3.org/2000/svg" version="1.1">
 					<defs>
